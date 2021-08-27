@@ -17,9 +17,7 @@ mitoses = form.text_input('Masukkan nilai mitoses : ')
 submit = form.form_submit_button("Classify!")
 
 if submit:
-    st.write("Hasil perhitungan")
-    st.write("Untuk variabel Protein",
-        model.predict([[
+    hasiil_prediksi = model.predict([[
             float(clump_thickness),
             float(uniformity_cell_size),
             float(uniformity_cell_shape),
@@ -28,4 +26,9 @@ if submit:
             float(bare_nuclei),
             float(bland_chromatin),
             float(normal_nucleoli),
-            float(mitoses)]])[0])
+            float(mitoses)]])[0]
+    
+    hasiil_prediksi = "tidak kena kanker payudara" if hasiil_prediksi == 2 else "ada kanker payudara"
+
+    st.write("Hasil perhitungan")
+    st.write("Pasien " + hasiil_prediksi)

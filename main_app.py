@@ -1,10 +1,8 @@
 import streamlit as st
-
 from joblib import load
 
-model = load('models/model.pkl')
-
 form = st.form(key='my-form')
+model = load('models/model.pkl')
 
 clump_thickness = form.text_input('Masukkan nilai clump_thickness : ')
 uniformity_cell_size = form.text_input('Masukkan nilai uniformity_cell_size : ')

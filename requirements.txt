@@ -1,5 +1,5 @@
-cython==0.29.21
+numpy==1.19.4
 joblib==0.14.1
 pandas==1.2.4
-scikit-learn==0.22
+scikit-learn==0.22.1
 streamlit==0.81.1
